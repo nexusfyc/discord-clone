@@ -6,7 +6,7 @@ interface IProps {
 
 const MainLayout = async ({ children }: {children: React.ReactNode}) => { 
   return (
-    <div>
+    <div className="h-full">
       {children}
     </div>
   )
