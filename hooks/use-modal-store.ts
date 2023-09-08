@@ -1,20 +1,32 @@
+import { Server } from "@prisma/client";
 import { create } from "zustand";
 
-export type ModalType = "createServer";
+//  app中弹窗的类型（创建服务、邀请）
+export type ModalType = "createServer" | "invite";
+
+
+
+interface ModalData {
+  server?: Server
+}
 
 interface ModalStore {
   type: ModalType | null;
+  data: ModalData;
   isOpen: boolean;
-  onOpen: (type: ModalType) => void;
+  onOpen: (type: ModalType, data?: ModalData) => void;
   onClose: () => void;
 }
 
 export const useModal = create<ModalStore>((set) => ({ 
   type: null,
   isOpen: false,
-  onOpen: (type) => set({
+  data: {},
+  onOpen: (type, data = {}) => set({
+    //  当打开弹窗时，将信息保存入store
     isOpen: true,
-    type: type
+    type,
+    data
   }),
   onClose: () => set({
     type: null,

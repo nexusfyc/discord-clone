@@ -67,6 +67,7 @@ export default function CreateServerModal({ }: Props) {
             await axios.post("/api/servers", values);
             form.reset();
             router.refresh();
+            onClose();
         } catch (error) {
             console.log();
             
@@ -112,13 +113,13 @@ export default function CreateServerModal({ }: Props) {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
-                                            Server name
+                                            服务名称
                                         </FormLabel>
                                         <FormControl>
                                             <Input
                                                 disabled={isLoading}
                                                 className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
-                                                placeholder="Enter server name"
+                                                placeholder="请输入服务名称"
                                                 {...field}
                                             />
                                         </FormControl>
@@ -128,7 +129,7 @@ export default function CreateServerModal({ }: Props) {
                             />
                         </div>
                         <DialogFooter className="bg-grey-100 px-6 py-4">
-                            <Button disabled={isLoading} variant="primary">Create</Button>
+                            <Button disabled={isLoading} variant="primary">创建</Button>
                         </DialogFooter>
                     </form>
                 </Form>
