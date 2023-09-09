@@ -4,6 +4,8 @@ import { ChannelType } from "@prisma/client";
 import { redirect } from "next/navigation";
 import React from "react";
 import ServerHeader from "./server-header";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import ServerSearch from "./server-search";
 
 interface ServerSidebarProps {
   serverId: string
@@ -54,6 +56,11 @@ const ServerSidebar: React.FC<ServerSidebarProps> = async (props) => {
         server={server}
         role={role} 
       />
+      <ScrollArea className="flex-1 px-3" >
+        <div className="mt-2" >
+          <ServerSearch />
+        </div>
+      </ScrollArea>
     </div>
   )
  } 

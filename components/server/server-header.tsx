@@ -76,14 +76,20 @@ const ServerHeader: React.FC<ServerHeaderProps> = (props) => {
           <DropdownMenuSeparator />
         )}
         {isAdmin && (
-          <DropdownMenuItem className="text-rose-500 px-3 py-2 text-sm cursor-pointer" >
+          <DropdownMenuItem 
+          className="text-rose-500 px-3 py-2 text-sm cursor-pointer" 
+          onClick={() => onOpen("deleteServer", { server })}
+          >
             删除服务
             <Trash className="h-4 w-4 ml-auto" />
           </DropdownMenuItem>
         )}
         {/* 只有guest和moderator能离开服务，admin只能删除服务 */}
         {!isAdmin && (
-          <DropdownMenuItem className="text-rose-500 px-3 py-2 text-sm cursor-pointer" >
+          <DropdownMenuItem 
+          className="text-rose-500 px-3 py-2 text-sm cursor-pointer" 
+          onClick={() => onOpen("leaveServer", { server })}
+          >
             离开服务
             <LogOut className="h-4 w-4 ml-auto" />
           </DropdownMenuItem>
