@@ -1,14 +1,15 @@
-import { ChannelType, Server } from "@prisma/client";
+import { Channel, ChannelType, Server } from "@prisma/client";
 import { create } from "zustand";
 
 //  app中弹窗的类型（创建服务、邀请）
-export type ModalType = "createServer" | "invite" | "editServer" | "members" | "createChannel" | "leaveServer" | "deleteServer";
+export type ModalType = "createServer" | "invite" | "editServer" | "members" | "createChannel" | "leaveServer" | "deleteServer" | "deleteChannel" | "editChannel";
 
 
 
 interface ModalData {
   server?: Server;
-  channelType?: ChannelType
+  channel?: Channel
+  channelType?: ChannelType;
 }
 
 interface ModalStore {
