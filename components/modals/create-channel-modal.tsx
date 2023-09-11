@@ -51,10 +51,14 @@ export default function CreateChannelModal({ }: Props) {
 
     const router = useRouter();
     const params = useParams();
-    const { isOpen, type, onClose } = useModal();
+    const { isOpen, type, onClose, data } = useModal();
+
+    const { channelType } = data;
     
 
     const isModalOpen = isOpen && type === "createChannel"
+
+    
 
     const handleClose = () => {
         form.reset();
@@ -65,9 +69,17 @@ export default function CreateChannelModal({ }: Props) {
         resolver: zodResolver(formSchema),
         defaultValues: {
             name: "",
-            type: ChannelType.TEXT
+            type: channelType || ChannelType.TEXT
         }
-    })
+    });
+
+    useEffect(() => { 
+        if (channelType) {
+            form.setValue("type", channelType);
+        }else {
+            form.setValue("type", ChannelType.TEXT);
+        }
+     }, [channelType, form])
 
     const isLoading = form.formState.isSubmitting
 
@@ -130,7 +142,7 @@ export default function CreateChannelModal({ }: Props) {
                                     return (
                                         <FormItem>
                                             <FormLabel>
-                                                Channel Type
+                                                频道类型
                                             </FormLabel>
                                             <Select
                                                 disabled={isLoading}
