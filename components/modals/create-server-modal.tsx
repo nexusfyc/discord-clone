@@ -46,10 +46,10 @@ export default function CreateServerModal({ }: Props) {
 
     const isModalOpen = isOpen && type === "createServer"
 
-    const handleClose = () => { 
+    const handleClose = () => {
         form.reset();
         onClose();
-     }
+    }
 
     const form = useForm({
         resolver: zodResolver(formSchema),
@@ -70,9 +70,9 @@ export default function CreateServerModal({ }: Props) {
             onClose();
         } catch (error) {
             console.log();
-            
+
         }
-        
+
     }
 
     return (
@@ -93,18 +93,20 @@ export default function CreateServerModal({ }: Props) {
                                 <FormField
                                     control={form.control}
                                     name="imageUrl"
-                                    render={({field}) => { return (
-                                        <FormItem>
-                                            <FormControl>
-                                                <FileUpload 
-                                                    endpoint="serverImage"
-                                                    value={field.value}
-                                                    onChange={field.onChange}
-                                                />
-                                            </FormControl>
-                                        </FormItem>
-                                    ) }}
-                                 />
+                                    render={({ field }) => {
+                                        return (
+                                            <FormItem>
+                                                <FormControl>
+                                                    <FileUpload
+                                                        endpoint="serverImage"
+                                                        value={field.value}
+                                                        onChange={field.onChange}
+                                                    />
+                                                </FormControl>
+                                            </FormItem>
+                                        )
+                                    }}
+                                />
                             </div>
 
                             <FormField

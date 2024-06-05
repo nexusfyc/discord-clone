@@ -10,7 +10,7 @@ interface ServerIdPageProps {
   }
 }
 
-const ServerIdPage: React.FC<ServerIdPageProps> = async (props) => { 
+const ServerIdPage: React.FC<ServerIdPageProps> = async (props) => {
   const { params } = props;
   const profile = await currentProfile();
 
@@ -38,11 +38,11 @@ const ServerIdPage: React.FC<ServerIdPageProps> = async (props) => {
   })
 
   const initialChannel = server?.channels[0];
-  if(initialChannel?.name !== "general") {
+  if (initialChannel?.name !== "general") {
     return null;
   }
 
   return redirect(`/servers/${params.serverId}/channels/${initialChannel?.id}`)
- }
+}
 
- export default ServerIdPage;
+export default ServerIdPage;

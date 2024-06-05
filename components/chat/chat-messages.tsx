@@ -37,6 +37,8 @@ const ChatMessages: React.FC<ChatMessagesProps> = (props) => {
   const chatRef = useRef<ElementRef<"div">>(null);
   const bottomRef = useRef<ElementRef<"div">>(null);
 
+  
+
   const {
     data,
     fetchNextPage,
@@ -49,7 +51,6 @@ const ChatMessages: React.FC<ChatMessagesProps> = (props) => {
     paramKey,
     paramValue
   });
-
   if (status === "loading") {
     return (
       <div className="flex flex-col flex-1 justify-center items-center" >
@@ -71,6 +72,8 @@ const ChatMessages: React.FC<ChatMessagesProps> = (props) => {
       </div>
     )
   }
+
+  
 
 
   return (
