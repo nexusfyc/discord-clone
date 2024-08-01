@@ -69,7 +69,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = (props) => {
       <div className="flex flex-col flex-1 justify-center items-center" >
         <Loader2 className="h-7 w-7 text-zinc-500 animate-spin my-4" />
         <p className="text-xs text-zinc-500 dark:text-zinc-400" >
-          正在加载信息
+          loading messages...
         </p>
       </div>
     )
@@ -80,7 +80,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = (props) => {
       <div className="flex flex-col flex-1 justify-center items-center" >
         <ServerCrash className="h-7 w-7 text-zinc-500 my-4" />
         <p className="text-xs text-zinc-500 dark:text-zinc-400" >
-          报错了～
+          something wrong~~
         </p>
       </div>
     )

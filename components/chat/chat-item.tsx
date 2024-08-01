@@ -144,7 +144,7 @@ const ChatItem: React.FC<ChatItemProps> = (props) => {
               href={fileUrl}
               target="_blank"
               rel="noopener noreferer"
-              className="relatime aspect-square rounded-md mt-2 overflow-hidden border flex items-center bg-secondary h-48 w-48"
+              className="relative aspect-square rounded-md mt-2 overflow-hidden border flex items-center bg-secondary h-48 w-48"
             >
               <Image src={fileUrl} alt={content} fill className="object-cover" />
             </a>
@@ -158,7 +158,7 @@ const ChatItem: React.FC<ChatItemProps> = (props) => {
                 rel="noopener noreferrer"
                 className="ml-2 text-sm text-indigo-500 dark:text-indigo-400 hover:underline"
               >
-                PDF文件
+                PDF file
               </a>
             </div>
           )}
@@ -188,7 +188,7 @@ const ChatItem: React.FC<ChatItemProps> = (props) => {
                           <Input
                             disabled={isLoading}
                             className="p-2 bg-zinc-200/90 dark:bg-zinc-700/75 border-none focus-visible:ring-0 focus-visible:ring-offset-0 text-zinc-600 dark:text-zinc-200"
-                            placeholder="编辑信息"
+                            placeholder="edit message"
                             {...field}
                           />
                         </div>
@@ -197,10 +197,10 @@ const ChatItem: React.FC<ChatItemProps> = (props) => {
                   )}
                 />
                 <Button disabled={isLoading} size="sm" variant="primary" >
-                  保存
+                  save
                 </Button>
               </form>
-              <span className="text-[10px] mt-1 text-zinc-400" >点击esc取消，点击回车保存</span>
+              <span className="text-[10px] mt-1 text-zinc-400" >press ESC to cancel and ENTER to save</span>
             </Form>
           )}
         </div>
@@ -208,13 +208,13 @@ const ChatItem: React.FC<ChatItemProps> = (props) => {
       {canDeleteMessage && (
         <div className="hidden group-hover:flex items-center gap-x-2 absolute p-1 -top-2 right-5 bg-white dark:bg-zinc-800 border rounded-sm" >
           {canEditMessage && (
-            <ActionTooltip label="编辑" >
+            <ActionTooltip label="edit" >
               <Edit
                 onClick={() => setIsEditing(true)}
                 className="cursor-pointer ml-auto w-4 h-4 text-zinc-500 hover:text-zinc-600 dark:hover:text-zinc-300 transition" />
             </ActionTooltip>
           )}
-          <ActionTooltip label="删除" >
+          <ActionTooltip label="delete" >
             <Trash
             onClick={() => onOpen("deleteMessage", {
               apiUrl: `${socketUrl}/${id}`,
