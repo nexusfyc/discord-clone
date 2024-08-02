@@ -9,6 +9,7 @@ import { useChatQuery } from "@/hooks/use-chat-query";
 import ChatItem from "./chat-item";
 import { useChatSocket } from '@/hooks/use-chat-socket';
 import { useChatScroll } from '@/hooks/use-chat-scoll';
+import { db } from '@/lib/db';
 
 const DATE_FORMAT = "d MMM yyyy, HH:mm"
 
@@ -111,7 +112,11 @@ const ChatMessages: React.FC<ChatMessagesProps> = (props) => {
       <div className="flex flex-col-reverse mt-auto" >
         {data?.pages?.map((group, i) => (
           <Fragment key={i}>
-            {group?.items.map((message: MessageWithMemberWithProfile) => (<ChatItem
+            {group?.items.map((message: MessageWithMemberWithProfile) => {
+              console.log('message here:', message);
+              console.log('createAt here:', message.createAt);
+              console.log('updateAt here:', message.updateAt);
+              return (<ChatItem
                 key={message.id}
                 id={message.id}
                 member={message.member}
@@ -123,9 +128,9 @@ const ChatMessages: React.FC<ChatMessagesProps> = (props) => {
                 isUpdated={message.updateAt !== message.createAt}
                 socketUrl={socketUrl}
                 socketQuery={socketQuery}
-              />
+              />)
 
-            ))}
+            })}
           </Fragment>
         ))}
       </div>
