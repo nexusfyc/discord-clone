@@ -79,7 +79,7 @@ const ChatItem: React.FC<ChatItemProps> = (props) => {
       if (event.key === "Escape" || event.keyCode === 27) setIsEditing(false);
     }
     window.addEventListener('keydown', handleKeyDown);
-
+    
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 

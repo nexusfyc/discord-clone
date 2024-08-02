@@ -111,8 +111,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = (props) => {
       <div className="flex flex-col-reverse mt-auto" >
         {data?.pages?.map((group, i) => (
           <Fragment key={i}>
-            {group?.items.map((message: MessageWithMemberWithProfile) => (
-              <ChatItem
+            {group?.items.map((message: MessageWithMemberWithProfile) => (<ChatItem
                 key={message.id}
                 id={message.id}
                 member={message.member}
@@ -125,6 +124,7 @@ const ChatMessages: React.FC<ChatMessagesProps> = (props) => {
                 socketUrl={socketUrl}
                 socketQuery={socketQuery}
               />
+
             ))}
           </Fragment>
         ))}
