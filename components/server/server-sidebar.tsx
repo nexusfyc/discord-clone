@@ -123,7 +123,7 @@ const ServerSidebar: React.FC<ServerSidebarProps> = async (props) => {
               sectionType="channels"
               channelType={ChannelType.TEXT}
               role={role}
-              label="文字聊天频道"
+              label="Text Channel"
             />
             <div className="space-y-[2px]" >
               {textChannels.map((channel) => (
@@ -144,7 +144,7 @@ const ServerSidebar: React.FC<ServerSidebarProps> = async (props) => {
               sectionType="channels"
               channelType={ChannelType.AUDIO}
               role={role}
-              label="语音聊天频道"
+              label="Audio Channel"
             />
             <div className="space-y-[2px]" >
               {audioChannels.map((channel) => (
@@ -165,7 +165,7 @@ const ServerSidebar: React.FC<ServerSidebarProps> = async (props) => {
               sectionType="channels"
               channelType={ChannelType.VIDEO}
               role={role}
-              label="语音聊天频道"
+              label="Video Channel"
             />
             <div className="space-y-[2px]" >
               {videoChannels.map((channel) => (
@@ -185,7 +185,7 @@ const ServerSidebar: React.FC<ServerSidebarProps> = async (props) => {
             <ServerSection 
               sectionType="members"
               role={role}
-              label="成员"
+              label="number"
               server={server}
             />
             <div className="space-y-[2px]" >

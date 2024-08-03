@@ -41,7 +41,7 @@ const InviteCodePage: React.FC<IProps> = async (props) => {
       members: {
         create: [
           {
-            profileId: profile.id
+            profileId: profile.id   
           }
         ]
       }

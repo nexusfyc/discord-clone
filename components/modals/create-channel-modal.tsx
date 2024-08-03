@@ -108,7 +108,7 @@ export default function CreateChannelModal({ }: Props) {
             <DialogContent className="bg-white text-black p-0 overflow-hidden" >
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl text-center font-bold">
-                        创建频道
+                        Create Channel
                     </DialogTitle>
                 </DialogHeader>
                 <Form {...form} >
@@ -121,13 +121,13 @@ export default function CreateChannelModal({ }: Props) {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
-                                            频道名称
+                                            Channel Name
                                         </FormLabel>
                                         <FormControl>
                                             <Input
                                                 disabled={isLoading}
                                                 className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
-                                                placeholder="请输入频道名称"
+                                                placeholder="Please enter a channel name"
                                                 {...field}
                                             />
                                         </FormControl>
@@ -142,7 +142,7 @@ export default function CreateChannelModal({ }: Props) {
                                     return (
                                         <FormItem>
                                             <FormLabel>
-                                                频道类型
+                                                Channel Type
                                             </FormLabel>
                                             <Select
                                                 disabled={isLoading}
@@ -153,7 +153,7 @@ export default function CreateChannelModal({ }: Props) {
                                                     <SelectTrigger
                                                         className="bg-zinc-300/50 border-0 focus:ring-0 text-black ring-offset-0 focus:ring-offset-0 capitalize outline-none"
                                                     >
-                                                        <SelectValue placeholder="请选择频道类型" />
+                                                        <SelectValue placeholder="Please select channel type" />
                                                     </SelectTrigger>
                                                 </FormControl>
                                                 <SelectContent>
@@ -175,7 +175,7 @@ export default function CreateChannelModal({ }: Props) {
                             />
                         </div>
                         <DialogFooter className="bg-grey-100 px-6 py-4">
-                            <Button disabled={isLoading} variant="primary">创建</Button>
+                            <Button disabled={isLoading} variant="primary">Create</Button>
                         </DialogFooter>
                     </form>
                 </Form>

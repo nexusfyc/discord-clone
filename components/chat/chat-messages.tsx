@@ -113,9 +113,6 @@ const ChatMessages: React.FC<ChatMessagesProps> = (props) => {
         {data?.pages?.map((group, i) => (
           <Fragment key={i}>
             {group?.items.map((message: MessageWithMemberWithProfile) => {
-              console.log('message here:', message);
-              console.log('createAt here:', message.createAt);
-              console.log('updateAt here:', message.updateAt);
               return (<ChatItem
                 key={message.id}
                 id={message.id}

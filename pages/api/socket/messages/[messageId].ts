@@ -74,7 +74,7 @@ export default async function handle(
         },
         data: {
           fileUrl: null,
-          content: "这条信息已经被删除",
+          content: "This message has been deleted",
           deleted: true,
         },
         include: {

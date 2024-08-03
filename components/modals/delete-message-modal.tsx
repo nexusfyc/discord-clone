@@ -46,7 +46,7 @@ export default function DeleteMessageModal({ }: Props) {
             onClose();
         } catch (error) {
             console.log(error);
-            
+
         } finally {
             setIsLoading(false);
         }
@@ -57,27 +57,27 @@ export default function DeleteMessageModal({ }: Props) {
             <DialogContent className="bg-white text-black p-0 overflow-hidden" >
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl text-center font-bold">
-                        删除当前频道
+                        Delete Channel
                     </DialogTitle>
                     <DialogDescription className="text-zinc-500 text-center" >
-                        您确定要永久删除这条信息么？
+                        Are you sure you want to permanently delete this message?
                     </DialogDescription>
                 </DialogHeader>
                 <DialogFooter className="bg-gray-100 px-6 py-4" >
                     <div className="flex items-center justify-between w-full" >
                         <Button
-                          disabled={isLoading}
-                          onClick={onClose}
-                          variant="ghost"
+                            disabled={isLoading}
+                            onClick={onClose}
+                            variant="ghost"
                         >
-                            取消
+                            Cancel
                         </Button>
                         <Button
-                          disabled={isLoading}
-                          variant="primary"
-                          onClick={onClick}
+                            disabled={isLoading}
+                            variant="primary"
+                            onClick={onClick}
                         >
-                            确定
+                            Confirm
                         </Button>
                     </div>
                 </DialogFooter>

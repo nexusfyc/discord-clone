@@ -45,7 +45,7 @@ export default function LeaveServerModal({ }: Props) {
             router.push("/");
         } catch (error) {
             console.log(error);
-            
+
         } finally {
             setIsLoading(false);
         }
@@ -56,27 +56,27 @@ export default function LeaveServerModal({ }: Props) {
             <DialogContent className="bg-white text-black p-0 overflow-hidden" >
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl text-center font-bold">
-                        离开当前服务
+                        Leave server
                     </DialogTitle>
                     <DialogDescription className="text-zinc-500 text-center" >
-                        您确定要离开<span className="font-semibold text-indigo-500" >{`${server?.name}`}</span>么？
+                        Are you sure you want to leave the current server <span className="font-semibold text-indigo-500" >{`${server?.name}`}</span>?
                     </DialogDescription>
                 </DialogHeader>
                 <DialogFooter className="bg-gray-100 px-6 py-4" >
                     <div className="flex items-center justify-between w-full" >
                         <Button
-                          disabled={isLoading}
-                          onClick={onClose}
-                          variant="ghost"
+                            disabled={isLoading}
+                            onClick={onClose}
+                            variant="ghost"
                         >
-                            取消
+                            Cancel
                         </Button>
                         <Button
-                          disabled={isLoading}
-                          variant="primary"
-                          onClick={onClick}
+                            disabled={isLoading}
+                            variant="primary"
+                            onClick={onClick}
                         >
-                            确定
+                            Confirm
                         </Button>
                     </div>
                 </DialogFooter>

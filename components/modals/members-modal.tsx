@@ -96,10 +96,10 @@ export default function MembersModal({ }: Props) {
             <DialogContent className="bg-white text-black overflow-hidden" >
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl text-center font-bold">
-                        管理成员
+                        Manage numbers
                     </DialogTitle>
                     <DialogDescription className="text-center text-zinc-500" >
-                        {server?.members?.length} 个成员
+                        {server?.members?.length} numbers
                     </DialogDescription>
                 </DialogHeader>
 
@@ -126,7 +126,7 @@ export default function MembersModal({ }: Props) {
                                             <DropdownMenuSub>
                                                 <DropdownMenuSubTrigger className="flex items-center" >
                                                     <ShieldQuestion className="w-4 h-4 mr-2" />
-                                                    <span>角色</span>
+                                                    <span>Role</span>
                                                 </DropdownMenuSubTrigger>
                                                 <DropdownMenuPortal>
                                                     <DropdownMenuSubContent>
@@ -154,7 +154,7 @@ export default function MembersModal({ }: Props) {
                                             <DropdownMenuSeparator />
                                             <DropdownMenuItem onClick={() => onKick(member.id)} >
                                                 <Gavel className="h-4 w-4 mr-2" />
-                                                踢出服务
+                                                Kick out
                                             </DropdownMenuItem>
                                         </DropdownMenuContent>
                                     </DropdownMenu>

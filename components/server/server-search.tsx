@@ -54,17 +54,17 @@ const ServerSearch: React.FC<ServerSearchProps> = (props) => {
         <p
           className=" font-semibold text-sm text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-600 dark:group-hover:text-zinc-300 transition"
         >
-          搜索
+          Search
         </p>
         <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground ml-auto" >
           <span className="text-xs" >CMD/CTRL</span>+ K
         </kbd>
       </button>
       <CommandDialog open={open} onOpenChange={setOpen} >
-          <CommandInput placeholder="搜索所有频道和成员" />
+          <CommandInput placeholder="Search all channels and members" />
           <CommandList>
             <CommandEmpty>
-              查找不到结果
+            No results found
             </CommandEmpty>
             {data.map(({ label, type, data }) => { 
               if (!data?.length) return null;

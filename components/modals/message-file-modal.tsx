@@ -29,7 +29,7 @@ type Props = {}
 
 const formSchema = z.object({
     fileUrl: z.string().min(1, {
-        message: "请添加附件"
+        message: "Please add a file"
     })
 })
 
@@ -83,10 +83,10 @@ export default function MessageFileModal({ }: Props) {
             <DialogContent className="bg-white text-black p-0 overflow-hidden" >
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl text-center font-bold">
-                        添加一个附件
+                        Add a file
                     </DialogTitle>
                     <DialogDescription className="text-center text-zinc-500">
-                        以文件形式发送
+                        Send as file
                     </DialogDescription>
                 </DialogHeader>
                 <Form {...form} >
@@ -114,7 +114,7 @@ export default function MessageFileModal({ }: Props) {
                         </div>
                         <DialogFooter className="bg-grey-100 px-6 py-4">
                             <Button disabled={isLoading} variant="primary">
-                                发送
+                                Send
                             </Button>
                         </DialogFooter>
                     </form>

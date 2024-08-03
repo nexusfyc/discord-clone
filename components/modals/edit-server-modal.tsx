@@ -38,7 +38,7 @@ const formSchema = z.object({
         message: "Server image is required"
     })
 })
- 
+
 export default function EditServerModal({ }: Props) {
     const router = useRouter();
     const { isOpen, type, onClose, data } = useModal();
@@ -46,10 +46,10 @@ export default function EditServerModal({ }: Props) {
 
     const isModalOpen = isOpen && type === "editServer"
 
-    const handleClose = () => { 
+    const handleClose = () => {
         form.reset();
         onClose();
-     }
+    }
 
     const form = useForm({
         resolver: zodResolver(formSchema),
@@ -70,27 +70,27 @@ export default function EditServerModal({ }: Props) {
             onClose();
         } catch (error) {
             console.log();
-            
+
         }
-        
+
     }
 
-    useEffect(() => { 
+    useEffect(() => {
         if (server) {
             form.setValue("name", server.name);
             form.setValue("imageUrl", server.imageUrl);
         }
-     }, [server, form])
+    }, [server, form])
 
     return (
         <Dialog open={isModalOpen} onOpenChange={handleClose} >
             <DialogContent className="bg-white text-black p-0 overflow-hidden" >
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl text-center font-bold">
-                        定制化您的服务
+                        Customize your service
                     </DialogTitle>
                     <DialogDescription className="text-center text-zinc-500">
-                        请给您的服务配置头像，您可以随时更改
+                        Please configure an avatar for your service. You can change it at any time.
                     </DialogDescription>
                 </DialogHeader>
                 <Form {...form} >
@@ -100,18 +100,20 @@ export default function EditServerModal({ }: Props) {
                                 <FormField
                                     control={form.control}
                                     name="imageUrl"
-                                    render={({field}) => { return (
-                                        <FormItem>
-                                            <FormControl>
-                                                <FileUpload 
-                                                    endpoint="serverImage"
-                                                    value={field.value}
-                                                    onChange={field.onChange}
-                                                />
-                                            </FormControl>
-                                        </FormItem>
-                                    ) }}
-                                 />
+                                    render={({ field }) => {
+                                        return (
+                                            <FormItem>
+                                                <FormControl>
+                                                    <FileUpload
+                                                        endpoint="serverImage"
+                                                        value={field.value}
+                                                        onChange={field.onChange}
+                                                    />
+                                                </FormControl>
+                                            </FormItem>
+                                        )
+                                    }}
+                                />
                             </div>
 
                             <FormField
@@ -120,13 +122,13 @@ export default function EditServerModal({ }: Props) {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
-                                            服务名称
+                                            Server Name
                                         </FormLabel>
                                         <FormControl>
                                             <Input
                                                 disabled={isLoading}
                                                 className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
-                                                placeholder="请输入服务名称"
+                                                placeholder="Please enter a service name"
                                                 {...field}
                                             />
                                         </FormControl>
@@ -136,7 +138,7 @@ export default function EditServerModal({ }: Props) {
                             />
                         </div>
                         <DialogFooter className="bg-grey-100 px-6 py-4">
-                            <Button disabled={isLoading} variant="primary">更改</Button>
+                            <Button disabled={isLoading} variant="primary">Change</Button>
                         </DialogFooter>
                     </form>
                 </Form>

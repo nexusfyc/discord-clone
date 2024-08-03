@@ -80,10 +80,10 @@ export default function CreateServerModal({ }: Props) {
             <DialogContent className="bg-white text-black p-0 overflow-hidden" >
                 <DialogHeader className="pt-8 px-6">
                     <DialogTitle className="text-2xl text-center font-bold">
-                        定制化您的服务
+                        Customize Your Server
                     </DialogTitle>
                     <DialogDescription className="text-center text-zinc-500">
-                        请给您的服务配置头像，您可以随时更改
+                        Please configure an avatar for your server. You can change it at any time.
                     </DialogDescription>
                 </DialogHeader>
                 <Form {...form} >
@@ -115,13 +115,13 @@ export default function CreateServerModal({ }: Props) {
                                 render={({ field }) => (
                                     <FormItem>
                                         <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
-                                            服务名称
+                                            Server Name
                                         </FormLabel>
                                         <FormControl>
                                             <Input
                                                 disabled={isLoading}
                                                 className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
-                                                placeholder="请输入服务名称"
+                                                placeholder="Please enter a service name"
                                                 {...field}
                                             />
                                         </FormControl>
@@ -131,7 +131,7 @@ export default function CreateServerModal({ }: Props) {
                             />
                         </div>
                         <DialogFooter className="bg-grey-100 px-6 py-4">
-                            <Button disabled={isLoading} variant="primary">创建</Button>
+                            <Button disabled={isLoading} variant="primary">Create</Button>
                         </DialogFooter>
                     </form>
                 </Form>

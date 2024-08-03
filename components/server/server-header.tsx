@@ -39,7 +39,7 @@ const ServerHeader: React.FC<ServerHeaderProps> = (props) => {
           className="text-indigo-600 dark:text-indigo-400 px-3 py-2 text-sm cursor-pointer"
           onClick={() => onOpen("invite", { server })}
            >
-            邀请用户
+            Invite Friends
             <UserPlus className="h-4 w-4 ml-auto" />
           </DropdownMenuItem>
         )}
@@ -49,7 +49,7 @@ const ServerHeader: React.FC<ServerHeaderProps> = (props) => {
           className="px-3 py-2 text-sm cursor-pointer" 
           onClick={() => onOpen("editServer", { server })}
           >
-            服务设置
+            Server Settings
             <Settings className="h-4 w-4 ml-auto" />
           </DropdownMenuItem>
         )}
@@ -58,7 +58,7 @@ const ServerHeader: React.FC<ServerHeaderProps> = (props) => {
           className="px-3 py-2 text-sm cursor-pointer"
           onClick={() => onOpen("members", { server })} 
           >
-            管理成员
+            Manage Numbers
             <Users className="h-4 w-4 ml-auto" />
           </DropdownMenuItem>
         )}
@@ -68,7 +68,7 @@ const ServerHeader: React.FC<ServerHeaderProps> = (props) => {
           className="px-3 py-2 text-sm cursor-pointer" 
           onClick={() => onOpen("createChannel")}
           >
-            创建频道
+            Create Channel
             <PlusCircle className="h-4 w-4 ml-auto" />
           </DropdownMenuItem>
         )}
@@ -80,7 +80,7 @@ const ServerHeader: React.FC<ServerHeaderProps> = (props) => {
           className="text-rose-500 px-3 py-2 text-sm cursor-pointer" 
           onClick={() => onOpen("deleteServer", { server })}
           >
-            删除服务
+            Delete Server
             <Trash className="h-4 w-4 ml-auto" />
           </DropdownMenuItem>
         )}
@@ -90,7 +90,7 @@ const ServerHeader: React.FC<ServerHeaderProps> = (props) => {
           className="text-rose-500 px-3 py-2 text-sm cursor-pointer" 
           onClick={() => onOpen("leaveServer", { server })}
           >
-            离开服务
+            Leave Server
             <LogOut className="h-4 w-4 ml-auto" />
           </DropdownMenuItem>
         )}

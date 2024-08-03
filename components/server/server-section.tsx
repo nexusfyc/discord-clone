@@ -25,7 +25,7 @@ const ServerSection: React.FC<ServerSectionProps> = (props) => {
         {label}
       </p>
       {role !== MemberRole.GUEST && sectionType === "channels" && (
-        <ActionTooltip label="创建频道" side="top" >
+        <ActionTooltip label="Create Channel" side="top" >
           <button
             className="text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300 transition"
             onClick={() => onOpen("createChannel", {channelType})}
@@ -35,7 +35,7 @@ const ServerSection: React.FC<ServerSectionProps> = (props) => {
         </ActionTooltip>
       )}
       {role === MemberRole.ADMIN && sectionType === "members" && (
-        <ActionTooltip label="管理成员" side="top" >
+        <ActionTooltip label="Manage Numbers" side="top" >
         <button
           className="text-zinc-500 hover:text-zinc-600 dark:text-zinc-400 dark:hover:text-zinc-300 transition"
           onClick={() => onOpen("members", {server})}

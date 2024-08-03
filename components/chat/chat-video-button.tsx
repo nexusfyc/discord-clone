@@ -7,6 +7,7 @@ import { Video, VideoOff } from "lucide-react"
 
 import ActionTooltip from "@/components/action-tooltip"
 import { Icon } from "@radix-ui/react-select"
+import { useEffect, useState } from "react"
 
 export const ChatVideoButton = () => {
   const pathname = usePathname();
@@ -14,6 +15,13 @@ export const ChatVideoButton = () => {
   const searchParams = useSearchParams();
 
   const isVideo = searchParams?.get("video");
+
+  const [isMounted, setIsMounted] = useState(false);
+
+
+    useEffect(() => { 
+        setIsMounted(true);
+     }, [])
 
   const onClick = () => {
     const url = qs.stringifyUrl({
